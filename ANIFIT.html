@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANIFIT - Try On</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      text-align: center;
+    }
+
+    header {
+      background-color: #ff6f61;
+      color: white;
+      padding: 20px 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .instructions {
+      margin: 20px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .container {
+      position: relative;
+      width: 50%;
+      margin: 20px auto;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      background-color: #fff;
+      padding: 20px;
+    }
+
+    .anime-character {
+      width: 100%;
+      max-width: 400px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .try-on-item {
+      position: absolute;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .controls {
+      margin-top: 20px;
+    }
+
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ff6f61;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #ff4c3b;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>Welcome to ANIFIT</header>
+
+  <!-- Instructions -->
+  <div class="instructions">
+    Try on accessories with our anime character by moving them around!
+  </div>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Anime Character -->
+    <img src="images/anime-character.png" alt="Anime Character" class="anime-character">
+    
+    <!-- Try-On Items -->
+    <img src="images/hat.png" alt="Hat" class="try-on-item" id="hat" style="width: 50px; top: 20px; left: 150px;">
+    <img src="images/glasses.png" alt="Glasses" class="try-on-item" id="glasses" style="width: 60px; top: 120px; left: 180px;">
+  </div>
+
+  <!-- Controls -->
+  <div class="controls">
+    <h3>Control Items:</h3>
+    <p>Move the items using the buttons below.</p>
+    <div>
+      <strong>Hat:</strong>
+      <button onclick="moveItem('hat', -10, 0)">Left</button>
+      <button onclick="moveItem('hat', 10, 0)">Right</button>
+      <button onclick="moveItem('hat', 0, -10)">Up</button>
+      <button onclick="moveItem('hat', 0, 10)">Down</button>
+    </div>
+    <div>
+      <strong>Glasses:</strong>
+      <button onclick="moveItem('glasses', -10, 0)">Left</button>
+      <button onclick="moveItem('glasses', 10, 0)">Right</button>
+      <button onclick="moveItem('glasses', 0, -10)">Up</button>
+      <button onclick="moveItem('glasses', 0, 10)">Down</button>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Function to move try-on items
+    function moveItem(itemId, xChange, yChange) {
+      const item = document.getElementById(itemId);
+      const currentStyle = window.getComputedStyle(item);
+      const currentX = parseInt(currentStyle.left, 10);
+      const currentY = parseInt(currentStyle.top, 10);
+
+      item.style.left = currentX + xChange + 'px';
+      item.style.top = currentY + yChange + 'px';
+    }
+  </script>
+</body>
+</html>
