@@ -1,0 +1,53 @@
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #6a5acd;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            text-align: center;
+            margin: 30px;
+        }
+        .try-on-button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #6a5acd;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px 0;
+        }
+        .try-on-button :hover {
+            background-color: #5b4cb8;
+        }
+        .features {
+            margin: 20px auto;
+            text-align: left;
+            max-width: 600px;
+        }
+        .features li {
+            margin: 10px 0;
+        }
+        .anime-character {
+            display: block;
+            margin: 20px auto;
+            max-width: 300px;
+            border-radius: 10px;
+        }
+        footer {
+            background-color: #6a5acd;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    
